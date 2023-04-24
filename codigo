@@ -144,33 +144,34 @@ while True:
                         print(f'{"="*50}') 
                         for identificador,Titulo,Autor,Genero,Año_publicacion,Isbn,Fecha_adquisicion in registro:
                             print(f'{identificador:<3}{Titulo:<39}{Autor:<30}{Genero:<25}{Año_publicacion:<15}{Isbn:<12}{Fecha_adquisicion}')
-                        print(f'{"="*50}')
-                    else:
-                        while True:
-                            exportacion=int(input("[1]Exportar reporte en formato CSV\n[2]Exportar reporte en formato MsExcel\n[3]No exportar nada"))
+                        
 
-                            if exportacion==1:
-                                with open("biblioteca.csv","w",newline="") as archivo:
-                                    guardado=csv.writer(archivo)
-                                    guardado.writerow(biblioteca.keys())
-                                    guardado.writerow(biblioteca.values())
-                                print("*"*40)
-                                print("El reporte se guardo en el archivo biblioteca.csv")
-                                print("*"*40)
-                            if exportacion==2:
-                                libro = openpyxl.Workbook()
-                                hoja = libro.active 
-                                hoja["B1"].value = "BIBLIOTECA"
-                                for i, key in enumerate(biblioteca.keys(),start=1):
-                                    hoja.cell(row=1, column=i, value=key)
-                                libro.save("biblioteca.xlsx")
-                                print("*"*40)
-                                print("El reporte se guardo en el archivo biblioteca.xlsx")
-                                print("*"*40)
-                            if exportacion==3:
-                                print("SALIENDO.")
-                                break 
-                            os.system('cls')     
+                        else:
+                            while True:
+                                exportacion=int(input("[1]Exportar reporte en formato CSV\n[2]Exportar reporte en formato MsExcel\n[3]No exportar nada\n:"))
+
+                                if exportacion==1:
+                                    with open("biblioteca.csv","w",newline="") as archivo:
+                                        guardado=csv.writer(archivo)
+                                        guardado.writerow(biblioteca.keys())
+                                        guardado.writerow(biblioteca.values())
+                                    print("*"*40)
+                                    print("El reporte se guardo en el archivo biblioteca.csv")
+                                    print("*"*40)
+                                if exportacion==2:
+                                    libro = openpyxl.Workbook()
+                                    hoja = libro.active 
+                                    hoja["B1"].value = "BIBLIOTECA"
+                                    for i, key in enumerate(biblioteca.keys(),start=1):
+                                        hoja.cell(row=1, column=i, value=key)
+                                    libro.save("biblioteca.xlsx")
+                                    print("*"*40)
+                                    print("El reporte se guardo en el archivo biblioteca.xlsx")
+                                    print("*"*40)
+                                if exportacion==3:
+                                    print("SALIENDO.")
+                                    break 
+                                os.system('cls')     
 
                     if dato== '2':#REPORTE POR AUTOR
                         print(f'{"="*50}') 
@@ -189,32 +190,32 @@ while True:
                                 print('\t Isbn:',p['Isbn'])
                                 print('\t Fecha Adquirida:',p['Fecha_adquisicion'])
                                 print(f'{"="*50}')
-                    else:
-                        while True:
-                            exportacion=int(input("[1]Exportar reporte en formato CSV\n[2]Exportar reporte en formato MsExcel\n[3]No exportar nada"))
+                        else:
+                            while True:
+                                exportacion=int(input("[1]Exportar reporte en formato CSV\n[2]Exportar reporte en formato MsExcel\n[3]No exportar nada\n:"))
 
-                            if exportacion==1:
-                                with open("biblioteca.csv","w",newline="") as archivo:
-                                    guardado=csv.writer(archivo)
-                                    guardado.writerow(biblioteca.keys())
-                                    guardado.writerow(biblioteca.values())
-                                print("*"*40)
-                                print("El reporte se guardo en el archivo biblioteca.csv")
-                                print("*"*40)
-                            if exportacion==2:
-                                libro = openpyxl.Workbook()
-                                hoja = libro.active 
-                                hoja["B1"].value = "BIBLIOTECA"
-                                for i, key in enumerate(biblioteca.keys(),start=1):
-                                    hoja.cell(row=1, column=i, value=key)
-                                libro.save("biblioteca.xlsx")
-                                print("*"*40)
-                                print("El reporte se guardo en el archivo biblioteca.xlsx")
-                                print("*"*40)
-                            if exportacion==3:
-                                print("SALIENDO.")
-                                break 
-                            os.system('cls')  
+                                if exportacion==1:
+                                    with open("biblioteca.csv","w",newline="") as archivo:
+                                        guardado=csv.writer(archivo)
+                                        guardado.writerow(biblioteca.keys())
+                                        guardado.writerow(biblioteca.values())
+                                    print("*"*40)
+                                    print("El reporte se guardo en el archivo biblioteca.csv")
+                                    print("*"*40)
+                                if exportacion==2:
+                                    libro = openpyxl.Workbook()
+                                    hoja = libro.active 
+                                    hoja["B1"].value = "BIBLIOTECA"
+                                    for i, key in enumerate(biblioteca.keys(),start=1):
+                                        hoja.cell(row=1, column=i, value=key)
+                                    libro.save("biblioteca.xlsx")
+                                    print("*"*40)
+                                    print("El reporte se guardo en el archivo biblioteca.xlsx")
+                                    print("*"*40)
+                                if exportacion==3:
+                                    print("SALIENDO.")
+                                    break 
+                                os.system('cls')  
                            
 
                     if dato=='3': #REPORTE POR GENERO
@@ -234,33 +235,33 @@ while True:
                                 print('\t Isbn:',p['Isbn'])
                                 print('\t Fecha Adquirida:',p['Fecha_adquisicion'])
                                 print(f'{"="*50}')
-                        print(f'{"="*50}')
-                    else:
-                        while True:
-                            exportacion=int(input("[1]Exportar reporte en formato CSV\n[2]Exportar reporte en formato MsExcel\n[3]No exportar nada"))
+                        
+                        else:
+                            while True:
+                                exportacion=int(input("[1]Exportar reporte en formato CSV\n[2]Exportar reporte en formato MsExcel\n[3]No exportar nada\n:"))
 
-                            if exportacion==1:
-                                with open("biblioteca.csv","w",newline="") as archivo:
-                                    guardado=csv.writer(archivo)
-                                    guardado.writerow(biblioteca.keys())
-                                    guardado.writerow(biblioteca.values())
-                                print("*"*40)
-                                print("El reporte se guardo en el archivo biblioteca.csv")
-                                print("*"*40)
-                            if exportacion==2:
-                                libro = openpyxl.Workbook()
-                                hoja = libro.active 
-                                hoja["B1"].value = "BIBLIOTECA"
-                                for i, key in enumerate(biblioteca.keys(),start=1):
-                                    hoja.cell(row=1, column=i, value=key)
-                                libro.save("biblioteca.xlsx")
-                                print("*"*40)
-                                print("El reporte se guardo en el archivo biblioteca.xlsx")
-                                print("*"*40)
-                            if exportacion==3:
-                                print("SALIENDO.")
-                                break 
-                            os.system('cls')  
+                                if exportacion==1:
+                                    with open("biblioteca.csv","w",newline="") as archivo:
+                                        guardado=csv.writer(archivo)
+                                        guardado.writerow(biblioteca.keys())
+                                        guardado.writerow(biblioteca.values())
+                                    print("*"*40)
+                                    print("El reporte se ha guardo en el archivo biblioteca.csv")
+                                    print("*"*40)
+                                if exportacion==2:
+                                    libro = openpyxl.Workbook()
+                                    hoja = libro.active 
+                                    hoja["B1"].value = "BIBLIOTECA"
+                                    for i, key in enumerate(biblioteca.keys(),start=1):
+                                        hoja.cell(row=1, column=i, value=key)
+                                    libro.save("biblioteca.xlsx")
+                                    print("*"*40)
+                                    print("El reporte se ha guardo en el archivo biblioteca.xlsx")
+                                    print("*"*40)
+                                if exportacion==3:
+                                    print("SALIENDO.")
+                                    break 
+                                os.system('cls')  
                     
                     if dato=='4': #POR AÑO DE PUBLICACION
                         print(f'{"="*50}')
@@ -279,33 +280,33 @@ while True:
                                 print('\t Isbn:',p['Isbn'])
                                 print('\t Fecha Adquirida:',p['Fecha_adquisicion'])
                                 print(f'{"="*50}')
-                        print(f'{"="*50}')
-                    else:
-                        while True:
-                            exportacion=int(input("[1]Exportar reporte en formato CSV\n[2]Exportar reporte en formato MsExcel\n[3]No exportar nada"))
+                      
+                        else:
+                            while True:
+                                exportacion=int(input("[1]Exportar reporte en formato CSV\n[2]Exportar reporte en formato MsExcel\n[3]No exportar nada\n:"))
 
-                            if exportacion==1:
-                                with open("biblioteca.csv","w",newline="") as archivo:
-                                    guardado=csv.writer(archivo)
-                                    guardado.writerow(biblioteca.keys())
-                                    guardado.writerow(biblioteca.values())
-                                print("*"*40)
-                                print("El reporte se guardo en el archivo biblioteca.csv")
-                                print("*"*40)
-                            if exportacion==2:
-                                libro = openpyxl.Workbook()
-                                hoja = libro.active 
-                                hoja["B1"].value = "BIBLIOTECA"
-                                for i, key in enumerate(biblioteca.keys(),start=1):
-                                    hoja.cell(row=1, column=i, value=key)
-                                libro.save("biblioteca.xlsx")
-                                print("*"*40)
-                                print("El reporte se guardo en el archivo biblioteca.xlsx")
-                                print("*"*40)
-                            if exportacion==3:
-                                print("SALIENDO.")
-                                break 
-                            os.system('cls')  
+                                if exportacion==1:
+                                    with open("biblioteca.csv","w",newline="") as archivo:
+                                        guardado=csv.writer(archivo)
+                                        guardado.writerow(biblioteca.keys())
+                                        guardado.writerow(biblioteca.values())
+                                    print("*"*40)
+                                    print("El reporte se guardo en el archivo biblioteca.csv")
+                                    print("*"*40)
+                                if exportacion==2:
+                                    libro = openpyxl.Workbook()
+                                    hoja = libro.active 
+                                    hoja["B1"].value = "BIBLIOTECA"
+                                    for i, key in enumerate(biblioteca.keys(),start=1):
+                                        hoja.cell(row=1, column=i, value=key)
+                                    libro.save("biblioteca.xlsx")
+                                    print("*"*40)
+                                    print("El reporte se guardo en el archivo biblioteca.xlsx")
+                                    print("*"*40)
+                                if exportacion==3:
+                                    print("SALIENDO.")
+                                    break 
+                                os.system('cls')  
                     if dato=='5': #VOLVER AL MENU
                         print('Volviendo')
                         break
@@ -335,6 +336,9 @@ while True:
        
     elif opcion =='3':
         print('TERMINACION DEL PROGRAMA')
+        print("Archivo CSV tiene como nombre 'biblioteca.csv")
+        print(archivo)
+        archivo.close()
         break
     elif opcion=='':
         print('NO SE PERMITE ESPACIOS VACIOS.')
